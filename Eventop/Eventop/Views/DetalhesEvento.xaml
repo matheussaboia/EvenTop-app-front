@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eventop.Views.DetalhesEvento"
+             x:Name="NomeDoEvento">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lstvComentarios"
+                        ItemsSource="{Binding eventoBuscado}"
+                        CachingStrategy="RecycleElement"
+                        HasUnevenRows="True"
+                        SeparatorVisibility="None">
+                    
+                    <ListView.Header>
+                    <StackLayout Orientation="Vertical" Padding="20" Spacing="20">
+
+                        <Frame>
+                            <StackLayout>
+                                <Label x:Name="lblInfoAtualizar" Text="Você pode atualizar o evento até 5 dias antes da data. Os participantes serão notificados." HorizontalTextAlignment="Center"></Label>
+                                <Label x:Name="lblAtualizar" Text="Atualizar" HorizontalTextAlignment="Center"></Label>
+                                <Label x:Name="lblAvaliar" IsVisible="false" HorizontalTextAlignment="Center"></Label>
+                                <Label x:Name="lblInformacaoTipoEvento" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                <Label x:Name="lblUrlEvento" HorizontalTextAlignment="Center" IsVisible="False" />
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame x:Name="frameRelatorio" IsVisible="false">
+                            <StackLayout>
+                                <Label x:Name="lblRelatorioUsuarios" Text="Relatório de usuários que participarão." TextColor="BlueViolet" FontAttributes="Bold"></Label>
+                            </StackLayout>
+                        </Frame>
+
+                        <StackLayout>
+
+                            <Image HorizontalOptions="Center" WidthRequest="450" HeightRequest="200" x:Name="imgPrincipalDoEvento"/>
+
+                            <Frame x:Name="FrameTitulo">
+                                <StackLayout Orientation="Vertical" BackgroundColor="White" >
+                                    <Label x:Name="lblNomeDoEvento"
+                           Font="25" HorizontalTextAlignment="Center" FontAttributes="Bold"
+                           TextColor="#50525f"/>
+                                    
+                                    <Grid>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="23"/>
+                                            <RowDefinition Height="23"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20" />
+                                            <ColumnDefinition Width="280"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Grid.Row="0" Source="local_18dp.png" ></Image>
+
+                                        <Label x:Name="lblLocalDoEvento" Grid.Column="1" Grid.Row="0"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+
+                                        <Image Grid.Column="0" Grid.Row="1" Source="data_18dp.png" ></Image>
+
+                                        <Label x:Name="lblDataDoEvento" Grid.Column="1" Grid.Row="1"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+
+
+                            <Frame>
+                                <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="white" >
+                                    <Label Text="Descrição do evento"
+                                    Font="20" HorizontalTextAlignment="Start" FontAttributes="Bold"
+                                    TextColor="#50525f"/>
+
+                                    <Grid>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20" />
+                                            <ColumnDefinition Width="280"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Grid.Row="0" Source="desc_18dp.png" ></Image>
+
+                                        <Label x:Name="lblDescricaoDoEvento" Grid.Column="1" Grid.Row="0"
+                                        HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                                        TextColor="#000"/>
+
+                                        <Image Grid.Column="0" Grid.Row="1" Source="participantes_18dp.png" ></Image>
+
+                                        <Label x:Name="lblParticipantesDoEvento" Grid.Column="1" Grid.Row="1"
+                                        HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                                        TextColor="#000"/>
+
+                                    </Grid>
+
+                                    <Label Text="Contatos do produtor"
+                           Font="20" HorizontalTextAlignment="Start" FontAttributes="Bold"
+                           TextColor="#50525f"/>
+
+                                    <Grid>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="23"/>
+                                            <RowDefinition Height="23"/>
+                                            <RowDefinition Height="23"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20" />
+                                            <ColumnDefinition Width="280"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Grid.Row="0" Source="autor_18dp.png" ></Image>
+
+                                        <Label x:Name="lblNomeDoProdutor" Grid.Column="1" Grid.Row="0"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+                                        <Image Grid.Column="0" Grid.Row="1" Source="email_18dp.png" ></Image>
+
+                                        <Label x:Name="lblEmailDoProdutor" Grid.Column="1" Grid.Row="1"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+                                        <Image Grid.Column="0" Grid.Row="2" Source="telefone_18dp.png" ></Image>
+
+                                        <Label x:Name="lblTelefoneDoProdutor"  Grid.Column="1" Grid.Row="2"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame>
+                                <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="white" >
+                                    <Label Text="Comentários dos participantes" x:Name="lblComentarios"
+                                    Font="20" HorizontalTextAlignment="Center" FontAttributes="Bold"
+                                    TextColor="#50525f"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </ListView.Header>
+                    
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                         
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="20, 0, 20, 20" Spacing="20">
+                                <Frame Margin="0, 0, 0, 15">
+                                    <StackLayout Orientation="Vertical" Spacing="10" BackgroundColor="white" >
+
+                                        <Grid>
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                            </Grid.RowDefinitions>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Grid.Column="0" Grid.Row="0" Text="{Binding LoginDoUsuario}"/>
+                                            <Label Grid.Column="1" Grid.Row="0" Text="{Binding DataDaAvaliacao}"/>
+
+                                            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding DescricaoDaAvaliacao}"/>
+
+                                        </Grid>
+
+
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                        </DataTemplate>
+                     </ListView.ItemTemplate>
+            </ListView>
+
+
+
+                <Button Text="Participar do Evento" TextColor="#fff" Clicked="Participar_Clicked"
+                    FontAttributes="Bold" HorizontalOptions="FillAndExpand" x:Name="btnParticiparDoEvento"
+                    BackgroundColor="#50525f"/>
+
+            <Button Text="Desinscrever-se do Evento" TextColor="#fff" Clicked="BtnDesinscreverDoEvento_Clicked"
+                    FontAttributes="Bold" HorizontalOptions="FillAndExpand" x:Name="btnDesinscreverDoEvento"
+                    BackgroundColor="#50525f"/>
+
+            <Button x:Name="btnAvaliarEvento" Clicked="BtnAvaliarEvento_Clicked" IsVisible="false"
+                        Text="Você ainda não avaliou o evento" HorizontalOptions="FillAndExpand"
+                        BackgroundColor="#50525f" TextColor="#fff"></Button>    
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

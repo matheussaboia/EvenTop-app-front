@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eventop.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#673ab7">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="30, 30, 30, 0" Spacing="30">
+                <BoxView HeightRequest="10"/>
+                <Image HorizontalOptions="Center" WidthRequest="350" Source="logo_eventop.png"/>
+                <StackLayout Orientation="Vertical" Margin="20, 0, 20, 0">
+                    <Label Text="Faça login e procure eventos do seu gosto!" Font="18" HorizontalTextAlignment="Center"
+                           TextColor="#fff"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Spacing="10" Margin="10, 0, 20, 0">
+                    <Entry x:Name="txtUsuario" Text="{Binding Usuario}" Placeholder="CPF/CNPJ ou usuário" HorizontalTextAlignment="Center"
+                           PlaceholderColor="White" HeightRequest="40"
+                           Keyboard="Email"
+                           TextColor="#fff"/>
+                    <Entry x:Name="txtSenha" Text="{Binding Senha}" Placeholder="Senha" PlaceholderColor="White" HorizontalTextAlignment="Center"
+                           IsPassword="True" TextColor="#fff" HeightRequest="40" />
+
+                </StackLayout>
+                <Button Clicked="Button_Clicked" Text="Iniciar sessão" TextColor="#fff"
+                    FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Gray"/>
+
+                <ActivityIndicator x:Name="actInd"
+                             IsRunning="False"
+                             IsVisible="False" Color="Red"/>
+
+                <StackLayout HorizontalOptions="Center">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition Width="140"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Grid.Row="0" Source="ic_phone_android_white_18dp.png" ></Image>
+
+                        <Label x:Name="lblEsqueceuSuaSenha" Text="Esqueceu a senha?" TextColor="#fff"
+                        FontAttributes="Bold"  Font="16" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"/>
+
+                    </Grid>
+
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="1" Grid.Row="0" Source="ic_card_membership_white_18dp.png" ></Image>
+
+                        <Label x:Name="lblCadastrarUsuario" Text="Cadastre-se" TextColor="#fff"
+                        FontAttributes="Bold" Font="16" Grid.Column="2" Grid.Row="0" VerticalOptions="Center"
+                        />
+                        
+                    </Grid>
+                    
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

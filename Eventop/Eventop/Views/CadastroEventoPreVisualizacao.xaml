@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eventop.Views.CadastroEventoPreVisualizacao"
+             Title="Confirme seu evento"
+             NavigationPage.HasBackButton="True">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Publicar" Clicked="Publicar_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="20" Spacing="20">
+                
+                <Image HorizontalOptions="Center" WidthRequest="350" HeightRequest="200" x:Name="imgPrincipalDoEvento"/>
+                
+                <Frame x:Name="FrameTitulo">
+                    <StackLayout Orientation="Vertical" BackgroundColor="White" >
+                        <Label x:Name="lblNomeDoEvento" HorizontalTextAlignment="Center"
+                           Font="25" FontAttributes="Bold"
+                           TextColor="MediumPurple"/>
+                    </StackLayout>
+                </Frame>
+
+                    <Frame x:Name="FrameTipoEvento">
+                        <StackLayout Orientation="Vertical" BackgroundColor="White" >
+                            <Label x:Name="lblInformacaoTipoEvento" HorizontalTextAlignment="Center"
+                           Font="18" FontAttributes="Bold"
+                           TextColor="BlueViolet"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <StackLayout Orientation="Vertical" Margin="10, 0, 0, 0">
+                        <Label Text="Local do seu evento"
+                           Font="19" FontAttributes="Bold"
+                           TextColor="MediumPurple"/>
+                        <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="23"/>
+                            <RowDefinition Height="23"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="280"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Grid.Row="0" Source="ic_pin_drop_custom_18dp.png" ></Image>
+
+                        <Label x:Name="lblLocalDoEvento" Grid.Column="1" Grid.Row="0"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+                        <Image Grid.Column="0" Grid.Row="1" Source="ic_date_range_custom_18dp.png" ></Image>
+
+                        <Label x:Name="lblDataDoEvento" Grid.Column="1" Grid.Row="1"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+                        </Grid>
+                </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Margin="10, 0, 0, 0">
+                        <Label Text="Descrição do seu evento"
+                           Font="19" FontAttributes="Bold"
+                           TextColor="MediumPurple"/>
+
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="23"/>
+                                <RowDefinition Height="23"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="280"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" Grid.Row="0" Source="desc_18dp.png" ></Image>
+
+                            <Label x:Name="lblDescricaoDoEvento" Grid.Column="1" Grid.Row="0"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+
+                            <Image Grid.Column="0" Grid.Row="1" Source="desc_18dp.png" ></Image>
+
+                            <Label x:Name="lblCategoriaDoEvento" Grid.Column="1" Grid.Row="1"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Margin="10, 0, 0, 20">
+                        <Label x:Name="lblNomeDoEvento5" Text="Seus contatos"
+                           Font="19" FontAttributes="Bold"
+                           TextColor="MediumPurple"/>
+
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="23"/>
+                                <RowDefinition Height="23"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="280"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" Grid.Row="0" Source="email_18dp.png" ></Image>
+
+                            <Label x:Name="lblEmailDoAutor" Grid.Column="1" Grid.Row="0"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+
+                            <Image Grid.Column="0" Grid.Row="1" Source="telefone_18dp.png" ></Image>
+
+                            <Label x:Name="lblWhatsappDoAutor" Text="Vai ocorrer em 20 de abril de 2019" Grid.Column="1" Grid.Row="1"
+                           HeightRequest="40" Font="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                           TextColor="#000"/>
+
+                        </Grid>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

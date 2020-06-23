@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eventop.Views.CadastroPage"
+             Title="Crie uma conta"
+             BackgroundColor="#fff">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="35">
+                <Label Text="Cadastre-se. É fácil, rápido e o melhor: de graça" Font="20" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Gray"/>
+                <Label Text="Vamos ajudar você!"  Font="20" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Gray"/>
+                <StackLayout Orientation="Vertical" Padding="0, 30, 0, 80">
+
+                    <Picker x:Name="pckTipoUsuario" HorizontalOptions="FillAndExpand" Title="O que eu sou?" TextColor="#000" SelectedIndexChanged="PckTipoUsuario_SelectedIndexChanged">
+                        <Picker.Items>
+                            <x:String>Uma pessoa</x:String>
+                            <x:String>Uma empresa</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Entry x:Name="txtCPF" Text="{Binding Documento}" Margin="0, 15, 0, 0" Placeholder="Número de CPF"
+                           PlaceholderColor="Gray" HeightRequest="40" IsVisible="False"
+                           TextColor="#000"/>
+
+                    <Entry x:Name="txtCNPJ" Text="{Binding Documento}" Margin="0, 15, 0, 0" Placeholder="Número de CNPJ"
+                           PlaceholderColor="Gray" HeightRequest="40" IsVisible="False"
+                           TextColor="#000"/>
+
+                    <Entry x:Name="txtUsuario" Text="{Binding Usuario}" Margin="0, 15, 0, 0" Placeholder="Nome de usuário" 
+                           PlaceholderColor="Gray" HeightRequest="40"
+                           Keyboard="Email"
+                           TextColor="#000"/>
+
+                    <Entry x:Name="txtSenha" Text="{Binding Senha}" Margin="0, 15, 0, 0" Placeholder="Senha"
+                           PlaceholderColor="Gray" HeightRequest="40" 
+                           IsPassword="True"
+                           TextColor="#000"/>
+
+                    <Entry x:Name="txtEmail" Text="{Binding Email}" Margin="0, 15, 0, 0" Placeholder="Email"
+                           PlaceholderColor="Gray" HeightRequest="40" 
+                           TextColor="#000"/>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+
+                        <Switch Grid.Column="0" Grid.Row="0" x:Name="swtTermosDeUso" HorizontalOptions="Start"></Switch>
+                        <Label Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center">Eu aceito os termos de uso</Label>
+
+                    </Grid>
+
+                    <Button Text="#PartiuEvenTop" Clicked="Button_Clicked"  TextColor="#fff" Margin="0, 5, 0, 0"
+                    FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#9370DB"/>
+
+                </StackLayout>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

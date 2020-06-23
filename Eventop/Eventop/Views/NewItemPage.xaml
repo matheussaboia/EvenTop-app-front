@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eventop.Views.NewItemPage"
+             Title="Crie um evento">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Tirar foto" Clicked="Button_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="10">
+            <Image x:Name="imgPrincipalEvento" Source="inserir_imagem_48dp" WidthRequest="400" HeightRequest="250" HorizontalOptions="CenterAndExpand"></Image>
+            <Entry x:Name="txtNomeDoEvento" FontSize="Small" Placeholder="Nome" />
+            <Picker x:Name="pckCategoriaDoEvento" Title="Categoria" TextColor="#000" FontSize="Small">
+                <Picker.Items>
+                    <x:String>Música</x:String>
+                    <x:String>Festa Social</x:String>
+                    <x:String>Religioso</x:String>
+                    <x:String>Geek/Nerd e Cultura Pop</x:String>
+                    <x:String>Futebol</x:String>
+                    <x:String>Balada</x:String>
+                    <x:String>Acessibilidade</x:String>
+                    <x:String>Palestra</x:String>
+                    <x:String>Culinária</x:String>
+                    <x:String>Viagem</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="txtDescricaoDoEvento" FontSize="Small" Margin="0" Placeholder="Descrição" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <DatePicker Grid.Column="0" Grid.Row="0" x:Name="dtPckDataDoEvento" FontSize="Small" Margin="0"/>
+                <TimePicker Grid.Column="1" Grid.Row="0" x:Name="tmPckHorarioDoEvento" FontSize="Small" Margin="0"/>
+                
+            </Grid>
+
+            <Button x:Name="btnSegundaEtapa" Text="Segunda Etapa" Clicked="Save_Clicked" TextColor="#fff" Margin="0, 5, 0, 0"
+                    FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#9370DB"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eventop.Views.MeusEventos"
+            Title="Meus Eventos">
+  <!--Pages can be added as references or inline-->
+    
+    
+    <ContentPage Title="Publicados">
+
+        <StackLayout BackgroundColor="#FFFFFF">
+
+            <StackLayout>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--<Label Grid.Row="0" Grid.Column="0" Margin="20, 15, 0, 0" Text="Populares" TextColor="Gray" Font="20" FontAttributes="Bold" />-->
+                    <SearchBar Grid.Row="0" Grid.Column="0"  Margin="0, 0, 20, 5" 
+                               x:Name="searchEventosPopulares"></SearchBar>
+                </Grid>
+            </StackLayout>
+
+            <ListView x:Name="lstvEventosPublicados" IsPullToRefreshEnabled="True"
+                ItemsSource="{Binding eventoBuscado}"
+                ItemTapped="LstvEventosPublicados_ItemTapped"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="True"
+                SeparatorVisibility="None">
+
+                <!--Built in Cells-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="10, 5, 10, 5">
+                                <StackLayout>
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding ImgPrincipalDoEventoConvert}" WidthRequest="150" HeightRequest="100"/>
+
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding NomeDoEvento}" TextColor="black" FontSize="15" FontAttributes="Bold"/>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="autor_18dp.png"></Image>
+                                                <Label Text="{Binding NomeDoAutor}"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="participantes_18dp.png"></Image>
+                                                <Label Text="{Binding Quantidade}"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="data_18dp.png" ></Image>
+                                                <Label Text="{Binding DataDoEvento}"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="local_18dp.png"></Image>
+                                                <Label Text="{Binding Cidade}" />
+                                            </StackLayout>
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+
+    </ContentPage>
+
+
+
+    <ContentPage Title="Inscritos">
+
+        <StackLayout BackgroundColor="#FFFFFF">
+
+            <StackLayout>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--<Label Grid.Row="0" Grid.Column="0" Margin="20, 15, 0, 0" Text="Populares" TextColor="Gray" Font="20" FontAttributes="Bold" />-->
+                    <SearchBar Grid.Row="0" Grid.Column="0"  Margin="0, 0, 20, 5" 
+                               x:Name="searchEventosInscritos"></SearchBar>
+                </Grid>
+            </StackLayout>
+
+            <ListView x:Name="lstvEventosInscritos" IsPullToRefreshEnabled="True"
+                ItemsSource="{Binding eventoBuscado}"
+                ItemTapped="LstvEventosPublicados_ItemTapped"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="True"
+                SeparatorVisibility="None">
+
+                <!--Built in Cells-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="10, 5, 10, 5">
+                                <StackLayout>
+
+                                    <Label Text="{Binding Notificacao}" TextColor="Red" FontSize="15" FontAttributes="Bold"/>
+
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding ImgPrincipalDoEventoConvert}" WidthRequest="150" HeightRequest="100"/>
+
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding NomeDoEvento}" TextColor="black" FontSize="15" FontAttributes="Bold"/>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="autor_18dp.png"></Image>
+                                                <Label Text="{Binding NomeDoAutor}"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="participantes_18dp.png"></Image>
+                                                <Label Text="{Binding Quantidade}"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="data_18dp.png" ></Image>
+                                                <Label Text="{Binding DataDoEvento}"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Image Source="local_18dp.png"></Image>
+                                                <Label Text="{Binding Cidade}" />
+                                            </StackLayout>
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+        
+    </ContentPage>
+    
+</TabbedPage>

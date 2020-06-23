@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eventop.Views.PerfilPage"
+             x:Name="Perfil">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Editar" Clicked="Cancel_Clicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Orientation="Vertical" Padding="20, 0">
+                <BoxView HeightRequest="10"/>
+                <Image x:Name="imgDoUsuario" HorizontalOptions="Center" WidthRequest="400" HeightRequest="200" Source="inserir_imagem_48dp.png"/>
+                <Label Text="Fique a vontade para trocar a imagem na hora que quiser!" IsVisible="false" HorizontalTextAlignment="Center"></Label>
+                <Label x:Name="lblErroEndereco" Text="Você não tem um endereço, cadastre para criar eventos." IsVisible="false" HorizontalTextAlignment="Center"></Label>
+                <StackLayout Orientation="Vertical" Spacing="10" Margin="5, 15, 20, 0">
+                
+                <Label Text="Seu nome completo"></Label>
+                <Entry x:Name="txtNomeCompleto"
+                           PlaceholderColor="NavajoWhite" HeightRequest="40"
+                           Keyboard="Email"
+                           TextColor="#000"/>
+
+                <Label Text="Usuário"></Label>
+                <Entry x:Name="txtNomeUsuario" PlaceholderColor="NavajoWhite"
+                        TextColor="#000" HeightRequest="40" />
+
+                <Label Text="Sexo"></Label>
+                <Picker x:Name="pckSexoUsuario" HorizontalOptions="FillAndExpand" TextColor="#000">
+                    <Picker.Items>
+                        <x:String>Masculino</x:String>
+                        <x:String>Feminino</x:String>
+                        <x:String>Outro</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                    <Label Text="Documento"></Label>
+                    <Entry x:Name="txtDocumentoUsuario" PlaceholderColor="NavajoWhite" Keyboard="Numeric"
+                       TextColor="#000" HeightRequest="40" />
+                    
+                    <Label Text="Email"></Label>
+                    <Entry x:Name="txtEmailUsuario" PlaceholderColor="NavajoWhite"
+                        TextColor="#000" HeightRequest="40" />
+
+                <Label Text="Whatsapp"></Label>
+                    <Entry x:Name="txtWhatsappUsuario" PlaceholderColor="NavajoWhite" Keyboard="Numeric"
+                       TextColor="#000" HeightRequest="40" />
+
+            </StackLayout>
+            <Button x:Name="btnAtualizar" Text="Atualizar meus dados" TextColor="#fff"
+                    FontAttributes="Bold" HorizontalOptions="FillAndExpand" Clicked="BtnAtualizar_Clicked"
+                    BackgroundColor="MediumPurple"/>
+
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Image Grid.Column="0" Grid.Row="0" Source="ic_phone_android_white_18dp.png" ></Image>
+
+                <Label x:Name="lblEsqueceuSuaSenha" Text="Esqueceu a senha?" TextColor="#fff"
+                    FontAttributes="Bold"  Font="16" Grid.Column="1" Grid.Row="0" VerticalOptions="Center"/>
+
+                <Image Grid.Column="2" Grid.Row="0" Source="ic_card_membership_white_18dp.png"></Image>
+
+                <Label x:Name="lblCadastrarUsuario" Text="Cadastre-se" TextColor="#fff"
+                    FontAttributes="Bold" Font="16" Grid.Column="3" Grid.Row="0" VerticalOptions="Center"
+                    />
+            </Grid>
+
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

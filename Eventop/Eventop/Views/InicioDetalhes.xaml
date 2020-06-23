@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eventop.Views.InicioDetalhes"
+             xmlns:pages="clr-namespace:Eventop.Views"
+             NavigationPage.HasNavigationBar="False"
+                  x:Name="MasterPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" Padding="0">
+            <ContentPage.Content>
+                <StackLayout>
+                    <Grid BackgroundColor="MediumPurple">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+
+                        <Image x:Name="imgDoUsuario" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="3"/>
+                        
+                        <Label
+                          Grid.Column="1"
+                          Grid.Row="2"
+                          x:Name="lblNomeDoUsuario"
+                          TextColor="White" FontSize="Large"/>
+                    </Grid>
+
+                    <TableView Intent="Menu">
+                        <TableSection>
+                            <ViewCell Tapped="Perfil_Tapped">
+                                <StackLayout Padding="15,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Image Source="perfil_18dp.png" Grid.Row="0" Grid.Column="0"></Image>
+                                        <Label Text="Perfil" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+
+                            <ViewCell Tapped="MeusEventos_Tapped">
+                                <StackLayout Padding="15,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Image Source="meuseventos_18dp.png" Grid.Row="0" Grid.Column="0"></Image>
+                                        <Label Text="Meus Eventos" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+
+                            <ViewCell Tapped="Avaliacoes_Tapped">
+                                <StackLayout Padding="15,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Image Source="avaliacao_18dp.png" Grid.Row="0" Grid.Column="0"></Image>
+                                        <Label Text="Avaliações" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+
+                            <ViewCell Tapped="Sair_Tapped">
+                                <StackLayout Padding="15,10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Image Source="exit_18dp.png" Grid.Row="0" Grid.Column="0"></Image>
+                                        <Label Text="Sair" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableView>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+        <!--<pages:InicioDetalhesMaster x:Name="" />-->
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:Inicio />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

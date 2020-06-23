@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Eventop.Views.RelatorioUsuariosParticipantes">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lstvUsuariosParticipantes" IsPullToRefreshEnabled="True"
+                ItemsSource="{Binding usuariosBuscado}"
+                ItemTapped="LstvUsuariosParticipantes_ItemTapped"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="True"
+                SeparatorVisibility="None">
+
+                <!--Built in Cells-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="10, 5, 10, 5">
+                                <StackLayout>
+
+                                    <StackLayout Orientation="Vertical">
+
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="autor_18dp.png"></Image>
+                                            <Label Text="{Binding LoginDoUsuario}" TextColor="black" FontSize="15" FontAttributes="Bold"/>
+                                        </StackLayout>
+
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="email_18dp.png"></Image>
+                                            <Label Text="{Binding EmailDoUsuario}" TextColor="black" FontSize="15" FontAttributes="Bold"/>
+                                        </StackLayout>
+                                        
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding WhatsappDoUsuario}"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding SexoDoUsuario}"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="data_18dp.png"></Image>
+                                            <Label Text="{Binding DataDaParticipacao}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
