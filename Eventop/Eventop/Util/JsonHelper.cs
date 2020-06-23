@@ -13,7 +13,7 @@ namespace Eventop.Util
 {
     class JsonHelper
     {
-        private static string ipDoServidor = "http://192.168.1.247:3000/api/";
+        private static string ipDoServidor = "IP:PORT/api/";
 
         public List<Object> PegarDadosEnderecoAPI(string servico, string dadosNaUrl)
         {
